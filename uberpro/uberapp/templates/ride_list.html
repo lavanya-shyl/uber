@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: darkslategray;
+            color: aliceblue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        a {
+            color: burlywood;
+            margin: 0 5px;
+        }
+
+        .add {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: brown;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4b4b4b;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rides</title>
+</head>
+<body>
+
+    <h1>Rides</h1>
+    <a href="{% url 'add_ride' %}" class="add">Add New Ride</a>
+
+    <table>
+        <tr>
+            <th>Customer Name</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Fare (₹)</th>
+            <th>Actions</th>
+        </tr>
+        {% for ride in rides %}
+        <tr>
+            <td>{{ ride.customer.name }}</td>
+            <td>{{ ride.destination_source }}</td>
+            <td>{{ ride.destination }}</td>
+            <td>{{ ride.fare }}</td>
+            <td>
+                <a href="{% url 'edit_ride' ride.id %}">Edit</a>
+                <a href="{% url 'delete_ride' ride.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

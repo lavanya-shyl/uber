@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: darkslategray;
+            color: aliceblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4b4b4b;
+        }
+        h2 {
+            margin-top: 50px;
+            color: burlywood;
+        }
+        a {
+            color: burlywood;
+            margin: 0 5px;
+        }
+        .add {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 8px 16px;
+            background-color: brown;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 4px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <h1>Dashboard</h1>
+
+    <h2>Customers</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Rides</h2>
+    <a href="{% url 'add_ride' %}" class="add">Add New Ride</a>
+
+    <table>
+        <tr>
+            <th>Customer Name</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Actions</th>
+        </tr>
+        {% for ride in rides %}
+        <tr>
+            <td>{{ ride.customer.name }}</td>
+            <td>{{ ride.destination_source }}</td>
+            <td>{{ ride.destination }}</td>
+            <td>
+                <a href="{% url 'edit_ride' ride.id %}">Edit</a>
+                <a href="{% url 'delete_ride' ride.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
