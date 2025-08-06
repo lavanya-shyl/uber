@@ -1,0 +1,64 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: #6C8CD5;
+            color: aliceblue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 70%;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4b4b4b;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+</head>
+<body>
+
+    <h1>Customer List</h1>
+     
+   
+    <a href="{% url 'add_customer' %}">
+        <button style="background-color:rgb(146, 31, 31); color:white; padding:10px; border:none; border-radius:5px; margin-bottom: 20px;">
+            Add New Customer
+        </button>
+    </a>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.email }}</td>
+           
+            <td>
+            <a href="{% url 'edit_customer' customer.id %}">Edit</a> 
+            <a href="{% url 'delete_customer' customer.id %}">Delete</a>
+           </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>-->

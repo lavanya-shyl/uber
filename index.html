@@ -1,0 +1,308 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      
+    body {
+  background-color: #007C91;
+    }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #dde7e7;
+        }
+
+        a.button {
+            margin-top: 20px;
+            background: orange;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+  
+       #text{
+        
+        padding-left: 50%;
+          color: white;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          text-align: center;
+       }
+       #up{
+        padding-top: 30px;
+        font-size: 48px;
+       }
+       footer h5 {
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #B2EBF2;
+}
+
+footer i {
+  margin-right: 8px;
+}
+
+body {margin:25px;}
+
+div.polaroid {
+  margin-left: 40%;
+  margin-right: 40%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+div.container {
+  text-align: center;
+  color: #2E3A3A;
+ 
+}
+.transparent-navbar {
+  background-color: rgba(241, 237, 237, 0.6); 
+  backdrop-filter: blur(8px);          
+}
+
+.transparent-footer {
+  background-color: rgba(241, 237, 237, 0.6); /* Black with 60% opacity */
+  backdrop-filter: blur(8px);          /* Optional: blur for elegance */
+}
+li{
+  color: #2E3A3A;
+}
+nav{
+  width: 100%;
+}
+  .info-box {
+       background-color: rgba(241, 237, 237, 0.6); /* Black with 60% opacity */
+       backdrop-filter: blur(8px);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      height: 100%;
+    }
+    .info-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #343a40;
+    }
+    .info-text {
+      color: #6c757d;
+    }
+    #go{
+      padding-left: 20%;
+      }
+      .online{
+        color: #FF7043;
+      }
+    </style>
+
+</head>
+
+<body class="css">
+  <nav class="navbar navbar-expand-sm transparent-navbar">
+
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="navbar-brand" href="#">GO_CAB</a>
+      </li>
+      <li class="nav-item">
+    <a href="{% url 'ride_list' %}" class="nav-link">Rides</a>
+</li>
+
+		
+		
+		
+		
+		
+		<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#"  data-bs-toggle="dropdown">
+    VEHICLES
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">CAR</a></li>
+    <li><a class="dropdown-item" href="#">AUTO</a></li>
+    <li><a class="dropdown-item" href="#">TRAVELLER</a></li>
+  </ul>
+</li>
+<li>
+  <a class="nav-link" href="#About">About</a>
+</li>
+<li>
+     <a href="{% url 'add_customer' %}" class="Online">
+        <button type="button" class="btn fw-semibold px-3 py-2 rounded">
+          Online Cab Booking
+        </button>
+      </a>
+      </li>
+		 </ul>
+		
+		
+       
+	 <ul class="navbar-nav">
+	  
+	  <li class="nav-item">
+		  <a class="nav-link" href="#"> <i class="fa-solid fa-globe"> GO</a></i>
+      </li>
+		 <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>
+		 <li class="nav-item">
+     <a class="nav-link" href="{% url 'login' %}">Log in</a>
+    </li>
+	
+	  </ul>
+		</div>
+
+
+</nav>
+<div class="container mt-4">
+  <div class="row justify-content-between align-items-center">
+    
+    <!-- Left: 24x7 Call -->
+    <div class="col-auto">
+      <div style="background-color: #FF7043; border: 2px solid white; border-radius: 10px; padding: 10px 20px; font-size: 14px; color: white;">
+        📞 24x7 Call: 91 33562 89746
+      </div>
+    </div>
+
+    <!-- Right: Online Cab Booking -->
+    <div class="col-auto">
+ 
+    </div>
+
+  </div>
+</div>
+
+
+<div class="css3 ms-5" id="go">
+  <h1 class=" mt-5">
+    GO ANYWHERE WITH 
+    GO_CAB
+  </h1>
+  
+  
+</div>
+<div class="container py-5">
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="info-box">
+        <div class="info-title">Why Choose Us?</div>
+        <p class="info-text">
+          We offer safe, affordable, and reliable cab services across multiple cities. Our professional drivers, real-time tracking, and 24/7 customer support make sure your ride is hassle-free and comfortable.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="info-box">
+        <div class="info-title">Our Specialties</div>
+        <p class="info-text">
+          ● Instant booking<br>
+          ● Clean & sanitized cars<br>
+          ● Verified drivers<br>
+          ● Transparent pricing<br>
+          ● Multiple payment options<br>
+          ● Loyalty rewards for regular users
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+
+
+<!--
+<div class="main">
+<div class="polaroid">
+  <div class="container">
+   <img src="{% static 'images/ekm.jpg'%}" style="width: 40%">
+  <p>alappuzha</p>
+  </div>
+</div>
+
+<div class="polaroid">
+  <img src="{% static 'images/alpy.jpg'%}" alt="eranakulam" style="width:50%">
+  <div class="container">
+  <p>eranakulam</p>
+  </div>
+</div>
+
+
+</div>
+-->
+<footer class="transparent-footer text-white pt-4 pb-3 mt-5">
+ <div class="container" id="About">
+    <div class="row">
+
+      <!-- Company Info -->
+      <div class="col-md-4">
+        <h5>GO_CAB</h5>
+        <p>Your trusted taxi service for fast, safe, and affordable travel 24x7.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4" id="Links">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="{% url 'ride_list' %}" class=" text-decoration-none">Rides</a></li>
+          <li><a href="#" class=" text-decoration-none">Vehicles</a></li>
+          <li><a href="#" class="text-decoration-none">Help</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4">
+        <h5>Contact</h5>
+        <p><i class="fas fa-phone-alt"></i> +91 33562 89746</p>
+        <p><i class="fas fa-envelope"></i> support@gocab.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Kerala, India</p>
+
+        <!-- Social Icons -->
+        <div>
+          <a href="#" class=" me-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="bg-light" />
+    <div class="text-center">
+      <small>&copy; 2025 GO_CAB. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
